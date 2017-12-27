@@ -4,6 +4,10 @@ apiRouter.get('/', (req, res, next) => {
   res.send('Hello');
 })
 
+apiRouter.get('/me', (req, res, next) => {
+  res.json(req.user);
+})
+
 apiRouter.use('/grangers', require('./grangers'));
 apiRouter.use('/potters', require('./potters'));
 apiRouter.use('/weasleys', require('./weasleys'));
